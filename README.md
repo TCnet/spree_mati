@@ -9,9 +9,8 @@ I bulid my own store with the spree 4.1 for the COVID-19 is so terrible, it make
 
 So i bulid the extension for the products import, it is cool and easy use.
 
-Maybe you need it build your own shop.
+Maybe you need it to build your own shop.
 
-Thank you!
 
 ## Installation
 
