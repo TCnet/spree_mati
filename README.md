@@ -2,6 +2,17 @@
 
 The mati is a spree extension which you can use it import product from amazon products xlsx document. 
 Fit for rails 6 and spree 4.1
+
+The mati is very easy to add product if you are a amazon seller want to create your onw shop site.
+
+I create my own shop use the spree 4.1 for the COVID-19.
+
+And create the extension for the products import.
+
+Maybe you need it.
+
+Thank you!
+
 ## Installation
 
 1. Add this extension to your Gemfile with this line:
