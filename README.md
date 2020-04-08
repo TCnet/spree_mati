@@ -1,7 +1,7 @@
 # SpreeMati
 
 The mati is a spree extension which you can use it import product from amazon products xlsx document. 
-Fit for the spree 4.1
+Fit for rails 6 and spree 4.1
 ## Installation
 
 1. Add this extension to your Gemfile with this line:
@@ -15,7 +15,7 @@ Fit for the spree 4.1
     gem 'roo-xls'
 
     gem 'spree_mati', github: 'TCnet/spree_mati'
-    
+
     ```
 
 2. Install the gem using Bundler
