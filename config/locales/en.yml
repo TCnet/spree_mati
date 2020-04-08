@@ -1,0 +1,19 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  spree:
+    mati: Mati
+
+    new_mati_import: New upload files
+    mati_importdata: Data has been imported 
+    mati_imports: Import to Products
+    bullet_point: Bullet Points
+    mati_settings:
+      title: Mati Settings
+      import_row_from_title: Import form begin which row
+      ama_title: The title of the import product
+      ama_description: The description of the import product 
+    notice_messages:
+      mati_import_deleted: Import deleted
+      mati_import_not_deleted: Import not delete yet

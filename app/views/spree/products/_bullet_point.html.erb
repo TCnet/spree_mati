@@ -1,0 +1,6 @@
+<% unless @product.bullet_point.blank? %>
+  <h3 class="pt-4 font-weight-bold text-uppercase product-details-subtitle"><%= Spree.t(:bullet_point) %></h3>
+  <ul id="bullet-point" class="m-0 list-unstyled " data-hook>
+     <%=  product_bullet_point(@product) %>
+  </ul>
+<% end %>

@@ -1,0 +1,9 @@
+<ul id="sidebar-mati" class="border-top bg-white collapse nav nav-pills nav-stacked" data-hook="admin_mati_sub_tabs">
+
+
+<%= tab :mati_imports %>
+
+<%= configurations_sidebar_menu_item(Spree.t('mati_settings.title'), admin_mati_settings_path) if can? :manage, Spree::MatiSetting %>
+
+
+</ul>

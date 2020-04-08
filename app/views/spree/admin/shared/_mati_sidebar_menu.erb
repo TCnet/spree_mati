@@ -1,0 +1,5 @@
+<% if can? :admin, Spree::Mati %>
+    <ul class="nav nav-sidebar border-bottom">
+      <%= main_menu_tree Spree.t(:mati), icon: "leaf", sub_menu: "mati", url: "#sidebar-mati" %>
+    </ul>
+  <% end %>

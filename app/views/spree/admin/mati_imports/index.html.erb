@@ -1,0 +1,50 @@
+<% content_for :page_title do %>
+   <%= plural_resource_name(Spree::MatiImport) %>
+<% end %>
+<div class="mb-2">
+  
+   <p> 
+    The mati is a spree extension which you can use it import product from amazon products xlsx document. <br>Please check the document is less then 2M size and only one product include the variants, first before you import.
+  </p>
+  
+</div>
+<%= form_for [:admin, @mati_import ] do |f| %>
+  <fieldset>
+    <%= render partial: 'form', locals: { f: f } %>
+    <div data-hook="buttons" class="form-actions">
+    <%= button Spree.t('actions.create'), 'ok', 'submit', {class: 'btn-success'} %>
+  </div>
+  </fieldset>
+<% end %>
+
+
+<table class="table" id="listing_imports">
+    <thead>
+      <tr data-hook="admin_mati_imports_index_headers">
+        <th><%= Spree.t(:datafile) %></th>
+        <th><%= Spree.t(:date) %></th>
+        <th data-hook="admin_mati_imports_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+<% if @mati_imports.any? %>
+<%  @mati_imports.each do |f|%>
+  <tr>
+    <td><%= (link_to f.datafile.blob.filename, main_app.url_for(f.datafile) ) if f.datafile.attached?%></td>
+    <td><%= f.created_at%></td>
+     <td class="actions actions-1 text-right" data-hook="admin_mati_imports_index_row_actions">
+       <%= link_to(Spree.t(:mati_imports), importdata_admin_mati_import_path(f), method: :post, class: "btn btn-xs btn-default") %>
+              <%= link_to_delete f, no_text: true if can?(:delete, f)  %>
+            </td>
+  </tr>
+  <% end %>
+    </tbody>
+    </table>
+   <% end %>
+
+
+
+
+
+

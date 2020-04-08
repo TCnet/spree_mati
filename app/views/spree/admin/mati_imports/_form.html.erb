@@ -1,0 +1,11 @@
+<%= render partial: 'spree/shared/error_messages', locals: { target: @mati_import } %>
+<div class="form-group">
+  
+
+ <%= f.field_container :datafile do %>
+    <%= f.label :datafile %>
+    <%= f.file_field :datafile,class: 'form-control' %>
+  <% end %>
+
+
+</div>
