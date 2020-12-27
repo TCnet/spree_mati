@@ -1,5 +1,5 @@
 module Spree
-  module ProductsHelper
+  module ProductsHelperDecorator
     def product_bullet_point(product)
           
           #product.bullet_point.to_s.tr("\n","|").split('|').map{|x| tag_li(x) }.join
@@ -17,20 +17,24 @@ module Spree
       end
     end
 
-
+    
 
     def product_description(product)
-      description = if Spree::Config[:show_raw_product_description]
-                      product.description
+        description = if Spree::Config[:show_raw_product_description]
+                      product.description 
                     else
-                      str=product.description.to_s.gsub(/(<br>?)/m,'<p></p>')
-                      str.to_s.gsub(/(.*?)\r?\n\r?\n/m, '<p>\1</p>')
-
-                     # product.description.to_s.gsub(/(.*?)\r?\n\r?\n/m, '<p>\1</p>')
+                      str = product.description.to_s.gsub(/(<br>?)/m,'<p>\1</p>')
+                      str.to_s.gsub(/(.*?)\r?\n\r?\n/m, '<p >\1</p>')
+                      #product.description.to_s.gsub(/(.*?)\r?\n\r?\n/m, '<p>\1</p>')
                       
                     end
       description.blank? ? Spree.t(:product_has_no_description) : description
     end
+
+
+
+
+    
 
     private 
       def tag_li(str)
@@ -42,5 +46,8 @@ module Spree
 
   end
 end
+
+
+::Spree::ProductsHelper.prepend Spree::ProductsHelperDecorator if ::Spree::ProductsHelper.included_modules.exclude?(Spree::ProductsHelper)
 
 
